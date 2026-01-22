@@ -1,8 +1,11 @@
+import { diceColourChange } from "./Modules/DiceColour.mjs"
 const express = req('express')
 const app = express()
 const port = 8080
 
-app.get('/', (req, res) => {
+app.use(diceColourChange);
+
+app.get('/', (req, res, next) => {
   res.send('Hello World!')
 })
 
